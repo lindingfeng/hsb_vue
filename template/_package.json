@@ -1,0 +1,16 @@
+{
+    "name": "<%= name %>",
+    "description": "<%= description %>",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "hsbvue dev",
+        "build": "hsbvue build"
+    },
+    "dependencies": {
+        "vue": "2.6.10"
+    },
+    "devDependencies": {
+        "hsbvue": "git+ssh://git@git.huishoubao.com.cn:liuyunlong/hsb_vue.git"
+    }
+}
