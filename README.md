@@ -4,7 +4,7 @@
 1. 全局cli（推荐）
 ```bash
 # 安装cli
-npm i -g git+ssh://git@git.huishoubao.com.cn:liuyunlong/hsb_vue.git
+npm i -g git+http://git.huishoubao.com.cn/liuyunlong/hsb_vue.git
 # 现在可以使用全局命令`hsbvue`
 hsbvue create my-app
 # 进入工作目录
@@ -13,7 +13,7 @@ cd my-app
 
 2. npx方式安装
 ```bash
-npx git+ssh://git@git.huishoubao.com.cn:liuyunlong/hsb_vue.git create my-app
+npx git+http://git.huishoubao.com.cn/liuyunlong/hsb_vue.git create my-app
 # 进入工作目录
 cd my-app
 ```
