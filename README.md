@@ -19,9 +19,7 @@ cd my-app
 ```
 
 
-
 ## 开始开发
-
 ```bash
 npm run dev # 启动开发模式
 npm run build # 编译
@@ -48,5 +46,3 @@ npm run build # 编译
    cd my-app
    npx git+ssh://git@git.huishoubao.com.cn:liuyunlong/hsb_vue.git update
    ```
-
-   
