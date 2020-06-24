@@ -36,7 +36,7 @@ npm run build # 编译
    ```bash
    # 进入工作目录
    cd my-app
-   hsbvue update
+   hsbvue upgrade
    ```
 
 2. npx方式
@@ -44,5 +44,5 @@ npm run build # 编译
    ```bash
    # 进入工作目录
    cd my-app
-   npx git+ssh://git@git.huishoubao.com.cn:liuyunlong/hsb_vue.git update
+   npx git+ssh://git@git.huishoubao.com.cn:liuyunlong/hsb_vue.git upgrade
    ```
