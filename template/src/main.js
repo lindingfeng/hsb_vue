@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import router from './router';
-import 'src/common/less/common.less';
+import '@/common/less/common.less';
 
 <%- uiPlugin %>
 
