@@ -1,0 +1,153 @@
+@import "config.color.less";
+@iconUrl: '../img/';
+
+.mt(@marginTop){
+  margin-top: @marginTop + 0px;/*no*/
+}
+.mb(@marginBottom){
+  margin-bottom: @marginBottom + 0px;/*no*/
+}
+.ml(@marginLeft){
+  margin-left: @marginLeft + 0px;/*no*/
+}
+.mr(@marginRight){
+  margin-right: @marginRight + 0px;/*no*/
+}
+.margin(@mt,@mr,@mb,@ml){
+  margin: @mt+0px @mr+0px @mb+0px @ml+0px;/*no*/
+}
+.m(@margin) {
+  margin: @margin;
+}
+
+.p(@padding) {
+  padding: @padding;
+}
+.padding(@pt,@pr,@pb,@pl) {
+  padding: @pt+0px @pr+0px @pb+0px @pl+0px;/*no*/
+}
+.pt(@paddingTop) {
+  padding-top:@paddingTop + 0px;/*no*/
+}
+.pr(@paddingRight) {
+  padding-right: @paddingRight + 0px;/*no*/
+}
+.pb(@paddingBottom) {
+  padding-bottom: @paddingBottom + 0px;/*no*/
+}
+.pl(@paddingLeft) {
+  padding-left: @paddingLeft + 0px;/*no*/
+}
+
+.width(@w) {
+  width: @w + 0px;/*no*/
+}
+.height(@h) {
+  height: @h + 0px;/*no*/
+}
+.bgColor(@bgColor){
+  background-color: @bgColor;
+}
+.lh(@lineHeight) {
+  line-height: @lineHeight + 0px;/*no*/
+}
+.fz(@fontSize) {
+    font-size: @fontSize + 0px;/*no*/
+}
+
+.backgroundImage(@iconName, @iconWidth, @iconHeight) {
+  background: url("@{iconUrl}@{iconName}.png") 0 0 no-repeat;
+  background-size: @iconWidth @iconHeight;
+}
+.backgroundImageGif(@iconName, @iconWidth, @iconHeight) {
+  background: url("@{iconUrl}@{iconName}.gif") 0 0 no-repeat;
+  background-size: @iconWidth @iconHeight;
+}
+
+// 设置表单的1px边线
+.setTopLine(@c: #c7c7c7, @t: solid) {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;/*no*/
+    border-top: 1px @t @c;/*no*/
+    color: @c;
+    transform-origin: 0 0;
+    transform: scaleY(0.5);
+}
+.setBottomLine(@c: #c7c7c7, @t: solid) {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;/*no*/
+    border-bottom: 1px @t @c;/*no*/
+    color: @c;
+    transform-origin: 0 100%;
+    transform: scaleY(0.5);
+}
+.setLeftLine(@c: #c7c7c7, @t: solid) {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;/*no*/
+    bottom: 0;
+    border-left: 1px @t @c;/*no*/
+    color: @c;
+    transform-origin: 0 0;
+    transform: scaleX(0.5);
+}
+.setRightLine(@c: #c7c7c7, @t: solid) {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;/*no*/
+    bottom: 0;
+    border-right: 1px @t @c;/*no*/
+    color: @c;
+    transform-origin: 100% 0;
+    transform: scaleX(0.5);
+}
+// 设置表单列表的三角箭头
+._setArrow(@arrowsize, @borderColor, @borderWidth){
+  display: inline-block;
+  height: @arrowsize;/*no*/
+  width: @arrowsize;/*no*/
+  border-width: @borderWidth @borderWidth 0 0;/*no*/
+  border-color: @borderColor;
+  border-style: solid;
+}
+
+.setArrow(@direction, @arrowsize, @borderColor, @borderWidth) when (@direction = top) {
+  ._setArrow(@arrowsize, @borderColor, @borderWidth);
+  transform: matrix(0.71,-0.71,0.71,0.71,0,0); // rotate(-45deg)
+}
+
+.setArrow(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = right) {
+  ._setArrow(@arrowsize, @borderColor, @borderWidth);
+  transform: matrix(0.71,0.71,-0.71,0.71,0,0); // rotate(45deg);
+
+  position: relative;
+  top: -2px;/*no*/
+}
+
+.setArrow(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = down) {
+  ._setArrow(@arrowsize, @borderColor, @borderWidth);
+  transform: matrix(-0.71,0.71,-0.71,-0.71,0,0); // rotate(135deg);
+
+  position: relative;
+  top: -3px;/*no*/
+}
+
+.setArrow(@direction, @arrowsize, @borderColor,@borderWidth) when (@direction = left) {
+  ._setArrow(@arrowsize, @borderColor, @borderWidth);
+  transform: matrix(-0.71,-0.71,0.71,-0.71,0,0); // rotate(-135deg);
+
+  position: relative;
+  top: -2px;/*no*/
+}

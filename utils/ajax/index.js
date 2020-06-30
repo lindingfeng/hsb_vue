@@ -265,4 +265,4 @@ class Ajax {
     }
 }
 
-export default new Ajax();
+export default Ajax;

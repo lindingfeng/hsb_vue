@@ -8,6 +8,7 @@
         "build": "hsbvue build"
     },
     "dependencies": {
-        "vue": "2.6.10"
+        "vue": "2.6.10",
+        "vue-router": "3.0.2"
     }
 }

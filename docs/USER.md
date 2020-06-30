@@ -76,9 +76,9 @@ module.exports = {
     // dev 在开发模式时为 true
     // 例如修改devServer
     config.devServer = {
+      ...config.devServer,
       host: 'http://dev.huishoubao.com',
-      port: 8080,
-      ...config.devServer
+      port: 8080
     }
     return config;
   }
