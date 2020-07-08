@@ -2,6 +2,24 @@ const path = require('path');
 
 module.exports = {
   mode: '<%= mode %>',
+  device: '<%= device %>',
+  head: {
+    title: '<%= name %>',
+    meta: {
+      keywords: '<%= name %>',
+      description: '<%= description %>',
+    },
+    // script: [
+    // 	{ src: '' }
+    // ],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
+    ]
+  },
   extra: {
     px2rem: <%- extra.includes('px2rem') %>,  // 是否启用px2rem
     postCss: <%- extra.includes('postcss') %>, // 是否启用postCss

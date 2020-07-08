@@ -1,6 +1,7 @@
 const ViewModule = {
   name: 'Home',
   data () {
+    return {}
   }
 };
 
