@@ -1,8 +1,8 @@
 const webpackConfig = require('./webpack.config');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (options) => {
-  const baseConfig = webpackConfig(options);
-  return {
-    ...baseConfig,
-  }
+  const config = webpackConfig(options);
+  config.plugins.push(new CleanWebpackPlugin());
+  return config;
 };
