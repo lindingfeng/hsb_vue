@@ -2,7 +2,6 @@ const path = require('path');
 
 module.exports = {
   mode: '<%= mode %>',
-  device: '<%= device %>',
   head: {
     title: '<%= name %>',
     meta: {
