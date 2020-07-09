@@ -1,7 +1,7 @@
-import Ajax from '@hsb/vue/utils/ajax';
+import BaseAjax from '@hsb/vue/utils/ajax';
 
-class MyAjax extends Ajax {
+class Ajax extends BaseAjax {
   // 根据业务扩展ajax
 }
 
-export default new MyAjax;
+export default new Ajax;

@@ -4,9 +4,9 @@ const os = require('os');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const helper = require('./helper');
-const vueLoaderConfig = require('./vue-loader-conf');
 
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 
@@ -20,11 +20,19 @@ const createHappyPlugin = (id, loaders) => {
 }
 
 module.exports = (options) => {
-  const { dev, head } = options;
+  const { dev, head, extra } = options;
+  const sourceMapEnabled = dev;
   const relyOnLink = helper.createRelyOn('link', head.link || []);
   const relyOnScript = helper.createRelyOn('script', head.link || []);
+  const cssLoaders = helper.cssLoaders({
+    dev,
+    sourceMap: sourceMapEnabled,
+    usePx2rem: extra.usePx2rem,
+    usePostCSS: extra.usePostCSS,
+    useExtractCSS: extra.useExtractCSS,
+  });
 
-  return {
+  const config =  {
     mode: process.env.NODE_ENV || 'production',
     entry: './src/main.js',
     output: {
@@ -32,15 +40,73 @@ module.exports = (options) => {
       filename: 'bundle.js'
     },
     module: {
-      // noParse: /static\/([\s\S]*.(js|css))/,
+      noParse: [/static\/([\s\S]*.(js|css))/],
       rules: [
         {
           test: /\.vue$/,
-          //exclude: exclude,
-          //include: [resolve('src')],
           loader: 'vue-loader',
-          options: vueLoaderConfig({ dev })
+          options: {
+            cssSourceMap: sourceMapEnabled,
+            cacheBusting: dev,
+            transformToRequire: {
+              video: ['src', 'poster'],
+              source: 'src',
+              img: 'src',
+              image: 'xlink:href'
+            }
+          }
         },
+        {
+          test: /\.js$/,
+          loader: dev ? "babel-loader" : 'happypack/loader?id=happy-vue-js'
+        },
+        {
+          test: /\.css$/,
+          use: cssLoaders.css,
+        },
+        {
+          test: /\.scss$/,
+          use: cssLoaders.scss,
+        },
+        {
+          test: /\.sass$/,
+          use: cssLoaders.sass,
+        },
+        {
+          test: /\.less$/,
+          use: cssLoaders.less,
+        },
+        {
+          test: /\.styl(us)?$/,
+          use: cssLoaders.stylus,
+        },
+        {
+          test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+          use: [
+            {
+              loader: "file-loader",
+              query: {
+                name: "img/[name].[hash].[ext]"
+              },
+            },
+          ]
+        },
+        {
+          test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            name: 'media/[name].[hash:7].[ext]'
+          }
+        },
+        {
+          test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            name: 'fonts/[name].[hash:7].[ext]'
+          }
+        }
       ]
     },
     plugins: [
@@ -66,4 +132,12 @@ module.exports = (options) => {
       }),
     ],
   }
+
+  if (extra.useExtractCSS && !dev) {
+    config.plugins.push(new MiniCssExtractPlugin({
+      filename: 'style.css'
+    }));
+  }
+
+  return config;
 }

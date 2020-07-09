@@ -21,9 +21,9 @@ module.exports = {
     ]
   },
   extra: {
-    px2rem: <%- extra.includes('px2rem') %>,  // 是否启用px2rem
-    postCss: <%- extra.includes('postcss') %>, // 是否启用postCss
-    extractCss: <%- extra.includes('extract') %>, // 是否抽离css
+    usePx2rem: <%- extra.includes('px2rem') %>,  // 是否启用px2rem
+    usePostCSS: <%- extra.includes('postcss') %>, // 是否启用postCss
+    useExtractCSS: <%- extra.includes('extract') %>, // 是否抽离css
   },
   webpack(config, { dev }) {
     // 自定义webpack配置
