@@ -1,8 +1,10 @@
 {
-    "name": "hsbvue",
+    "name": "@hsb/vue",
     "version": "0.0.1",
     "private": true,
-    "bin": "lib/cli.js",
+    "bin": {
+        "hsbvue": "lib/cli.js"
+    },
     "main": "index.js",
     "repository": {
         "url": "git+http://git.huishoubao.com.cn/liuyunlong/hsb_vue.git",
