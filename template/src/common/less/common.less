@@ -1,99 +1,158 @@
 @charset "utf-8";
+
 @import "config.less";
-*{
-    margin:0;
-    padding:0;
-    font-weight: normal;
-    font-family: "PingFangSC-Light", "Microsoft YaHei", "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Verdana", "sans-serif";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: "PingFangSC-Light", "Microsoft YaHei", "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Verdana", "sans-serif";
 }
 
-h1{ font-size: 28px;  color: #000;}
-ul,li{list-style:none;}
-table{ border-collapse:collapse;}
-img{ border:none;}
-input{ line-height:120%;}
-iframe{border: none; overflow-x: hidden; height: 100%; width: 100%}
-em,i{font-style: normal;}
-
-a{-webkit-touch-callout: none; cursor:pointer; text-decoration:none; outline:none; color:#333;}
-a:hover{ text-decoration:none;}
-.cboth{ clear:both; font-size:0; line-height:0; content:'0'; height:0; overflow:hidden;}
-
-::selection{background:#09C; color:#FFF;}
-::-moz-selection{background:#09C; color:#FFF;}
-a,button,input{
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-html, #app{height: 100%;}
-body{
-    height:100%;
-    letter-spacing: 1px;
-    background: @white;
-    -webkit-overflow-scrolling: touch;
-    overflow-scrolling: touch;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
-    color: @333Color;
+h1 {
+  font-size: 28px;
+  color: #000;
 }
 
-input, button, textarea, select, optgroup, option {
-    font-family: inherit;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    -webkit-appearance: none;
+ul,
+li { list-style: none; }
+table { border-collapse: collapse; }
+img { border: none; }
+input { line-height: 120%; }
+
+iframe {
+  border: none;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
 }
-select, optgroup, option{
-    border: 0;
+
+em,
+i { font-style: normal; }
+
+a,
+button,
+input {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-button {-webkit-appearance: none;  border: 0;  background: none; }
-::-webkit-input-placeholder{color:#999}
+
+a {
+  -webkit-touch-callout: none;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  color: #333;
+}
+a:hover { text-decoration: none; }
+
+.cboth {
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+  content: '0';
+  height: 0;
+  overflow: hidden;
+}
+
+::selection {
+  background: #09c;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #09c;
+  color: #fff;
+}
+
+html,
+#app { height: 100%; }
+
+body {
+  height: 100%;
+  letter-spacing: 1px;
+  background: @white;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  color: @333Color;
+}
+
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  -webkit-appearance: none;
+}
+
+select,
+optgroup,
+option {
+  border: 0;
+}
+
+textarea,
+input {
+  -webkit-appearance: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid #d2d2d2;
+  padding: 8px;
+  background: #fff;
+  resize: none;
+}
+
+button {
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+}
+::-webkit-input-placeholder { color: #999; }
 
 input::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-}
-textarea, input{
-    -webkit-appearance: none;
-    border-radius: 3px;
-    box-sizing: border-box;
-    outline:none;
-    border:1px solid #d2d2d2;
-    padding:8px;
-    background:#fff;
-    resize:none;
+  display: none;
+  -webkit-appearance: none;
 }
 
-.clear:after, img {
-    display: block;
+.clear::after,
+img {
+  display: block;
 }
-.modal-open{ 
-    position: fixed; 
+
+.modal-open {
+  position: fixed;
 }
-.relative{
-    position: relative;
+
+.relative {
+  position: relative;
 }
 
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .webkit-box {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -webkit-flex;
-    display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: flex;
 }
+
 .flex1 {
-    -webkit-flex: 1;
-    flex: 1;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
 }
 
 // 垂直居中
-.flex-center{
-    align-items: center;
-    justify-content: center;
+.flex-center {
+  align-items: center;
+  justify-content: center;
 }
-

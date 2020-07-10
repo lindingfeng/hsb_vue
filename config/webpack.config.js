@@ -6,6 +6,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const helper = require('./helper');
 
@@ -172,6 +173,10 @@ module.exports = (options) => {
       }),
       new webpack.DefinePlugin({
         'process.env.ENV': JSON.stringify(env),
+      }),
+      new StyleLintPlugin({
+        files: ['**/*.{vue,htm,html,css,sss,less,scss,sass}'],
+        fix: true,
       }),
       ...entryAndHtml.htmlPlugin,
     ],
