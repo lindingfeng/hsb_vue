@@ -23,7 +23,7 @@ module.exports = (options) => {
   const { dev, mode, head, extra } = options;
   const sourceMapEnabled = dev;
   const relyOnLink = helper.createRelyOn('link', head.link || []);
-  const relyOnScript = helper.createRelyOn('script', head.link || []);
+  const relyOnScript = helper.createRelyOn('script', head.script || []);
   const cssLoaders = helper.cssLoaders({
     dev,
     sourceMap: sourceMapEnabled,
