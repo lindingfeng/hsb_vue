@@ -86,3 +86,14 @@ hsbvue dev -p 8080 # 或 --port 8080
 ```bash
 hsbvue upgrade -t v1.0.0 # 版本号既仓库tag
 ```
+
+
+
+4. 使用yarn时安装/升级失败如何处理？
+这可能是yarn缓存了旧的版本导致，可尝试清理yarn的缓存后再进行操作。
+```bash
+yarn cache clean
+```
+
+
+
