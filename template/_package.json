@@ -8,10 +8,25 @@
         "build": "hsbvue build",
         "build:test": "hsbvue build --env=test"
     },
+    "lint-staged": {
+        "src/**/*.{js,vue}": [
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
     "dependencies": {
         "vue": "2.6.10",
         "vue-router": "3.0.2",
         "vuex": "^3.5.1"
+    },
+    "devDependencies": {
+        "husky": "^4.2.5",
+        "lint-staged": "^10.2.11"
     },
     "engines": {
         "node": ">= 10.16.0",

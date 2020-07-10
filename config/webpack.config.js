@@ -85,6 +85,13 @@ module.exports = (options) => {
       noParse: [/static\/([\s\S]*.(js|css))/],
       rules: [
         {
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /node_modules/,
+          options: { fix: true }
+        },
+        {
           test: /\.vue$/,
           loader: 'vue-loader',
           options: {

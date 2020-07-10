@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "@babel/core": "^7.10.4",
+        "babel-eslint": "^10.1.0",
         "babel-loader": "^8.1.0",
         "cac": "^6.5.10",
         "chalk": "^4.1.0",
@@ -19,6 +20,9 @@
         "command-exists": "^1.2.9",
         "copy-webpack-plugin": "^6.0.3",
         "css-loader": "^3.6.0",
+        "eslint": "^7.4.0",
+        "eslint-loader": "^4.0.2",
+        "eslint-plugin-vue": "^6.2.2",
         "file-loader": "1.1.11",
         "happypack": "5.0.1",
         "html-webpack-plugin": "^4.3.0",
