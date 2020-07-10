@@ -5,7 +5,8 @@
     "private": true,
     "scripts": {
         "dev": "hsbvue dev",
-        "build": "hsbvue build"
+        "build": "hsbvue build",
+        "build:test": "hsbvue build --env=test"
     },
     "dependencies": {
         "vue": "2.6.10",

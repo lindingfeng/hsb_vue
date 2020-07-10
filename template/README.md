@@ -1,4 +1,5 @@
 # <%= name %>
+<%= description %>
 
 ## 安装
 ```bash

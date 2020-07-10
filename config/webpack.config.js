@@ -1,6 +1,7 @@
 const path = require('path');
-const HappyPack = require('happypack');
 const os = require('os');
+const HappyPack = require('happypack');
+const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -20,7 +21,7 @@ const createHappyPlugin = (id, loaders) => {
 }
 
 module.exports = (options) => {
-  const { dev, mode, head, extra } = options;
+  const { dev, env, mode, head, extra } = options;
   const sourceMapEnabled = dev;
   const relyOnLink = helper.createRelyOn('link', head.link || []);
   const relyOnScript = helper.createRelyOn('script', head.script || []);
@@ -161,6 +162,9 @@ module.exports = (options) => {
               to:'./' // 打包到dist下面的static
           },
         ]
+      }),
+      new webpack.DefinePlugin({
+        'process.env.ENV': JSON.stringify(env),
       }),
       ...entryAndHtml.htmlPlugin,
     ],
