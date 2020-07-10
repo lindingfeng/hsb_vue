@@ -1,12 +1,12 @@
 export default {
-    setValue(state, param) {
+    setValue (state, param) {
         const key = param.key;
-        if(!key) {
+        if (!key) {
             return;
         }
         const keyArr = key.toString().split('.');
         let setParam = state;
-        for(var i in keyArr) {
+        for (let i in keyArr) {
             if (i < keyArr.length - 1) {
                 setParam = setParam[keyArr[i]];
             }

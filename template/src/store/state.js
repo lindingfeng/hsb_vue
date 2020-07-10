@@ -4,8 +4,8 @@ const IS_IOS = ua.indexOf('iphone') !== -1;
 const IS_NATIVE = IS_ANDROID || IS_IOS;
 
 const ENVQuery = () => {
-    if (ua.includes("alipayclient")) return "alipay";
-    if (ua.includes('micromessenger')) return "wechat";
+    if (ua.includes('alipayclient')) return 'alipay';
+    if (ua.includes('micromessenger')) return 'wechat';
     if (IS_NATIVE) return 'mobile';
     return 'pc';
 };
