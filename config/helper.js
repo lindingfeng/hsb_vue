@@ -1,4 +1,5 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const fs = require('fs')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // 创建额外依赖{script, link}
 exports.createRelyOn = (type, arr) => {
@@ -19,6 +20,19 @@ exports.createRelyOn = (type, arr) => {
     });
 
     return data.join('')
+}
+
+// 获取指定目录下的文件夹名字
+exports.getFolderName = (p) => {
+    let names = []
+    const files = fs.readdirSync(p)
+    files.forEach((item, index) => {
+        let stat = fs.lstatSync(p + "/" + item)
+        if (stat.isDirectory() === true) {
+            names.push(item)
+        }
+    })
+    return names
 }
 
 exports.cssLoaders = (options = {}) => {

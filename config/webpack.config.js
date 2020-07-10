@@ -20,7 +20,7 @@ const createHappyPlugin = (id, loaders) => {
 }
 
 module.exports = (options) => {
-  const { dev, head, extra } = options;
+  const { dev, mode, head, extra } = options;
   const sourceMapEnabled = dev;
   const relyOnLink = helper.createRelyOn('link', head.link || []);
   const relyOnScript = helper.createRelyOn('script', head.link || []);
@@ -32,12 +32,53 @@ module.exports = (options) => {
     useExtractCSS: extra.useExtractCSS,
   });
 
+  const getEntryAndHtml = (mode) => {
+    if (mode === 'universal') {
+      const names = helper.getFolderName(path.join(process.cwd(), 'src/entry'))
+      const entry = {}
+      const htmlPlugin = []
+      names.forEach(name => {
+        entry[name] = `./src/entry/${name}/main.js`
+        htmlPlugin.push(new HtmlWebpackPlugin({
+          template: path.join(process.cwd(), `index.html`),
+          filename: `${name}.html`,
+          meta: head.meta,
+          templateParameters: {
+            title: head.title,
+            relyOnLink,
+            relyOnScript,
+          },
+          chunks: [name]
+        }))
+      })
+      return {
+        entry,
+        htmlPlugin
+      }
+    } else {
+      return {
+        entry: './src/main.js',
+        htmlPlugin: [new HtmlWebpackPlugin({
+          template: path.join(process.cwd(), 'index.html'),
+          meta: head.meta,
+          templateParameters: {
+            title: head.title,
+            relyOnLink,
+            relyOnScript,
+          }
+        })]
+      }
+    }
+  }
+
+  const entryAndHtml = getEntryAndHtml(mode)
+
   const config =  {
     mode: process.env.NODE_ENV || 'production',
-    entry: './src/main.js',
+    entry: entryAndHtml.entry,
     output: {
       path: path.join(process.cwd(), 'dist'),
-      filename: 'bundle.js'
+      filename: dev ? 'js/[name].js' : 'js/[name].[chunkhash].js'
     },
     module: {
       noParse: [/static\/([\s\S]*.(js|css))/],
@@ -121,15 +162,7 @@ module.exports = (options) => {
           },
         ]
       }),
-      new HtmlWebpackPlugin({
-        title: head.title,
-        template: path.join(process.cwd(), 'index.html'),
-        meta: head.meta,
-        templateParameters: {
-          relyOnLink,
-          relyOnScript,
-        }
-      }),
+      ...entryAndHtml.htmlPlugin,
     ],
   }
 
