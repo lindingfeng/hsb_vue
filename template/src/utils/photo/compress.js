@@ -1,3 +1,4 @@
+// FYI. <%= pkgMasterUrl %>/utils/photo/compress.js
 import BaseCompress from '@hsb/vue/utils/photo/compress';
 
 class Compress extends BaseCompress {

@@ -1,3 +1,4 @@
+// FYI. <%= pkgMasterUrl %>/utils/photo/readerFile.js
 import BaseReaderFile from '@hsb/vue/utils/photo/readerFile';
 
 class ReaderFile extends BaseReaderFile {

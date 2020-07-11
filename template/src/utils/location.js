@@ -1,3 +1,4 @@
+// FYI. <%= pkgMasterUrl %>/utils/location
 import BaseLocation from '@hsb/vue/utils/location';
 
 class Location extends BaseLocation {

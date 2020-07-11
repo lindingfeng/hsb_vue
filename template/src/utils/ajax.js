@@ -1,3 +1,4 @@
+// FYI. <%= pkgMasterUrl %>/utils/ajax
 import BaseAjax from '@hsb/vue/utils/ajax';
 
 class Ajax extends BaseAjax {

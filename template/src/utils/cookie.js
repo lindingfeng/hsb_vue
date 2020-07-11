@@ -1,3 +1,4 @@
+// FYI. <%= pkgMasterUrl %>/utils/cookie
 import BaseCookie from '@hsb/vue/utils/cookie';
 
 class Cookie extends BaseCookie {
