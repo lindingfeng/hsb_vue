@@ -12,7 +12,7 @@
 
 ```bash
 # 安装cli
-npm i -g git+http://git.huishoubao.com.cn/hsb/hsb_vue.git
+npm i -g git+http://git.huishoubao.com.cn/liuyunlong/hsb_vue.git
 # 现在可以使用全局命令`hsbvue`
 hsbvue <指令> [参数]
 ```
@@ -22,7 +22,7 @@ hsbvue <指令> [参数]
 如采用npx方式（此方式因需要先下载git仓库，速度较慢）
 
 ```bash
-npx {git地址} <指令> [参数] # 例：npx git+http://git.huishoubao.com.cn/hsb/hsb_vue.git create my-app
+npx {git地址} <指令> [参数] # 例：npx git+http://git.huishoubao.com.cn/liuyunlong/hsb_vue.git create my-app
 ```
 
 
