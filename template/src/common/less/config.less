@@ -52,7 +52,7 @@
   line-height: @lineHeight + 0px;/*no*/
 }
 .fz(@fontSize) {
-    font-size: @fontSize + 0px;/*no*/
+  font-size: @fontSize + 0px;/*no*/
 }
 
 .backgroundImage(@iconName, @iconWidth, @iconHeight) {
@@ -66,52 +66,52 @@
 
 // 设置表单的1px边线
 .setTopLine(@c: #c7c7c7, @t: solid) {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 1px;/*no*/
-    border-top: 1px @t @c;/*no*/
-    color: @c;
-    transform-origin: 0 0;
-    transform: scaleY(0.5);
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;/*no*/
+  border-top: 1px @t @c;/*no*/
+  color: @c;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
 }
 .setBottomLine(@c: #c7c7c7, @t: solid) {
-    content: " ";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 1px;/*no*/
-    border-bottom: 1px @t @c;/*no*/
-    color: @c;
-    transform-origin: 0 100%;
-    transform: scaleY(0.5);
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;/*no*/
+  border-bottom: 1px @t @c;/*no*/
+  color: @c;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
 }
 .setLeftLine(@c: #c7c7c7, @t: solid) {
-    content: " ";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1px;/*no*/
-    bottom: 0;
-    border-left: 1px @t @c;/*no*/
-    color: @c;
-    transform-origin: 0 0;
-    transform: scaleX(0.5);
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;/*no*/
+  bottom: 0;
+  border-left: 1px @t @c;/*no*/
+  color: @c;
+  transform-origin: 0 0;
+  transform: scaleX(0.5);
 }
 .setRightLine(@c: #c7c7c7, @t: solid) {
-    content: " ";
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 1px;/*no*/
-    bottom: 0;
-    border-right: 1px @t @c;/*no*/
-    color: @c;
-    transform-origin: 100% 0;
-    transform: scaleX(0.5);
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;/*no*/
+  bottom: 0;
+  border-right: 1px @t @c;/*no*/
+  color: @c;
+  transform-origin: 100% 0;
+  transform: scaleX(0.5);
 }
 // 设置表单列表的三角箭头
 ._setArrow(@arrowsize, @borderColor, @borderWidth){

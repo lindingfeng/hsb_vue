@@ -1,7 +1,6 @@
 <template>
-  <div class="home">
-    <div id="charts"></div>
-    <router-link to="/detail/100010">点此查看详情</router-link>
+  <div class="detail">
+    详情id：{{id}}
   </div>
 </template>
 
