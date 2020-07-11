@@ -1,4 +1,4 @@
-import thirdApiConfig from 'src/config/thirdApiConfig';
+import thirdApiConfig from '@/config/thirdApiConfig';
 const AK = thirdApiConfig.baidu.ak;
 const API = thirdApiConfig.baidu.geoconvV1;         // 转换坐标
 const API2 = thirdApiConfig.baidu.geocoderV2;       // 坐标转出地址

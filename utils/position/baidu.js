@@ -9,7 +9,7 @@
  * loading 正在获取位置
  * success {point: {lat, lng}, province, city, district, street, streetNumber}
  */
-import thirdApiConfig from 'src/config/thirdApiConfig';
+import thirdApiConfig from '@/config/thirdApiConfig';
 let LoadBaidu = {
     statusText: {
         1: "定位失败",

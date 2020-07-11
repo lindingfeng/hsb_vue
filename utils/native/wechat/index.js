@@ -1,6 +1,6 @@
-import thirdApiConfig from 'src/config/thirdApiConfig';
-import ajax from 'utils/ajax';
-import ResourceLoader from 'utils/resourceLoader';
+import thirdApiConfig from '@/config/thirdApiConfig';
+import ajax from '@/utils/ajax';
+import ResourceLoader from '@/utils/resourceLoader';
 
 let Wechat = {
     isLoad: false,  // 是否加载过,

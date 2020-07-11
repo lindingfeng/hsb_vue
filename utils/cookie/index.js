@@ -56,4 +56,4 @@ class Cookie {
 
 }
 
-export default new Cookie();
+export default Cookie;

@@ -40,4 +40,4 @@ class Location {
 
 }
 
-export default new Location();
+export default Location;
