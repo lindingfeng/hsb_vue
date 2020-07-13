@@ -73,21 +73,21 @@ npm run dev
 模板位于`template`目录，用于`hsbvue create`指令。创建新项目时将会复制此目录文件，并进行一些必要处理。
 
 > 模板目录结构
->
-> ```
-> .
-> ├── template
-> │   ├── src               # 源码文件目录
-> │   ├── static            # 不需要打包的静态资源
-> │   ├── _babelrc          # 即.babelrc文件
-> │   ├── _eslintrc.js      # 即.eslintrc文件
-> │   ├── _gitignore        # 即.gitignore文件
-> │   ├── _package.json     # 即package.json
-> │   ├── hsbvue.config.js  # hsbvue脚手架相关配置
-> │   ├── index.html        # 默认html模板（移动端，PC端项目会自动移除）
-> │   ├── pc_index.html     # pc端html模板（mobile端项目会自动移除）
-> │   └── ...
-> ```
+ 
+ ```
+ .
+ ├── template
+ │   ├── src               # 源码文件目录
+ │   ├── static            # 不需要打包的静态资源
+ │   ├── _babelrc          # 即.babelrc文件
+ │   ├── _eslintrc.js      # 即.eslintrc文件
+ │   ├── _gitignore        # 即.gitignore文件
+ │   ├── _package.json     # 即package.json
+ │   ├── hsbvue.config.js  # hsbvue脚手架相关配置
+ │   ├── index.html        # 默认html模板（移动端，PC端项目会自动移除）
+ │   ├── pc_index.html     # pc端html模板（mobile端项目会自动移除）
+ │   └── ...
+ ```
 
 
 
@@ -116,7 +116,6 @@ npm run dev
 │       │   └── ...       # 将会被拷贝到项目 src 目录下
 │       │
 │       └── package.json  # 该三方框架package配置
-
 ```
 
 插件对应`package.json` 配置如下例所示，仅需配置自身项即可，最终将会被整合进项目package.json文件相应字段。
