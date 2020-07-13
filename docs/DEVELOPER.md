@@ -4,7 +4,7 @@
 
 
 
-## 开发调试
+## 一、开发调试
 
 ```bash
 # 步骤1，安装cli
@@ -31,7 +31,7 @@ npm run dev
 
 
 
-## 目录结构说明
+## 二、目录结构说明
 
 ```
 .
@@ -68,12 +68,12 @@ npm run dev
 
 
 
-## 模板开发
+## 三、模板开发
 
 模板位于`template`目录，用于`hsbvue create`指令。创建新项目时将会复制此目录文件，并进行一些必要处理。
 
 > 模板目录结构
- 
+
  ```
  .
  ├── template
@@ -91,12 +91,12 @@ npm run dev
 
 
 
-### 开发说明
+> 开发说明
 
 1. 模板支持两种变量
 
-- `<%= name %>`     此为cli变量，仅在创建项目时，由`sao.js`写入。相关变量可在`saofile.js`文件中的`templateData`定义。
-- `${name}`        此为webpack变量，在 编译/运行时，由webpack写入（目前仅在html模板里有用）
+  - `<%= name %>`     此为cli变量，仅在创建项目时，由`sao.js`写入。相关变量可在`saofile.js`文件中的`templateData`定义。
+  - `${name}`        此为webpack变量，在 编译/运行时，由webpack写入（目前仅在html模板里有用）
 
 
 
@@ -104,7 +104,7 @@ npm run dev
 
 
 
-## 插件开发
+## 四、插件开发
 
 第三方包/框架，都存放于`frameworks`目录，一个典型的插件结构如：
 
