@@ -82,6 +82,7 @@ module.exports = (options) => {
       path: path.join(process.cwd(), 'dist'),
       filename: dev ? 'js/[name].js' : 'js/[name].[chunkhash].js'
     },
+
     module: {
       noParse: [/static\/([\s\S]*.(js|css))/],
       rules: [
@@ -159,6 +160,7 @@ module.exports = (options) => {
         }
       ]
     },
+
     plugins: [
       createHappyPlugin('happy-babel-js', ['babel-loader?cacheDirectory=true']),
       createHappyPlugin('happy-vue-js', ['babel-loader?cacheDirectory=true']),
@@ -180,6 +182,21 @@ module.exports = (options) => {
       }),
       ...entryAndHtml.htmlPlugin,
     ],
+
+    optimization: {
+      splitChunks: {
+        chunks: "all",
+        name: true,
+        cacheGroups: {
+          vendors: {
+            name: 'vendors',
+            test: /[\\/]node_modules[\\/]/,
+            minChunks: 1,
+            priority: 10
+          },
+        }
+      }
+    }
   }
 
   if (extra.useExtractCSS && !dev) {
