@@ -5,9 +5,7 @@ const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const helper = require('./helper');
 
@@ -201,12 +199,14 @@ module.exports = (options) => {
   }
 
   if (extra.useExtractCSS && !dev) {
+    const MiniCssExtractPlugin = require('mini-css-extract-plugin');
     config.plugins.push(new MiniCssExtractPlugin({
       filename: 'style.css'
     }));
   }
 
   if (analyzer) {
+    const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
     config.plugins.push(new BundleAnalyzerPlugin());
   }
 
