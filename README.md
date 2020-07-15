@@ -1,6 +1,6 @@
 # 单页、多页面脚手架
 
-## 目录
+## 一、目录
 
 * hsbvue
   * [使用说明](docs/USER.md)
@@ -8,7 +8,7 @@
 
 
 
-## 安装方式
+## 二、安装方式
 
 1. 全局cli（推荐）
 ```bash
@@ -31,7 +31,7 @@ cd my-app
 
 
 
-## 开始开发
+## 三、开始开发
 
 ```bash
 npm run dev # 启动开发模式
@@ -40,7 +40,7 @@ npm run build # 编译
 
 
 
-## 更新/升级
+## 四、更新/升级
 
 如要更新/升级到最新版本的脚手架，也可通过全局cli命令和npx两种方式
 
@@ -62,7 +62,7 @@ npx git+http://git.huishoubao.com.cn/liuyunlong/hsb_vue.git upgrade
 
 
 
-## 常见问题
+## 五、常见问题
 
 1. 如何获得相关指令帮助？
 ```bash

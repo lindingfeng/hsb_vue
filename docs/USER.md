@@ -4,9 +4,9 @@
 
 
 
-## 使用方式
+## 一、使用方式
 
-### cli方式（推荐）
+### 1.1 cli方式（推荐）
 
 如采用 cli方式，需要先安装全局cli 
 
@@ -17,7 +17,7 @@ npm i -g git+http://git.huishoubao.com.cn/liuyunlong/hsb_vue.git
 hsbvue <指令> [参数]
 ```
 
-### npx 方式
+### 1.2 npx 方式
 
 如采用npx方式（此方式因需要先下载git仓库，速度较慢）
 
@@ -27,7 +27,7 @@ npx {git地址} <指令> [参数] # 例：npx git+http://git.huishoubao.com.cn/l
 
 
 
-## hsbvue指令
+## 二、hsbvue指令
 
 1. 创建新项目
 ```bash
@@ -63,7 +63,7 @@ hsbvue upgrade -t v1.0.0 # 版本号既仓库tag
 
    
 
-## 配置文件
+## 三、配置文件
 
 为了便于扩展，在项目根目录下会生成 `hsbvue.config.js` 文件，可在此文件里进行自定义配置、webpack扩展等。
 
