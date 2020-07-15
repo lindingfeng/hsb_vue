@@ -128,3 +128,25 @@ npm run dev
 }
 ```
 
+
+
+## 五、版本发布
+
+> 发布新版本时，必须打tag，并修改`package.json`的`version`字段
+>
+> tag和version必须一一对应
+>
+> 因npm规范约束，`version`字段需去掉开头的 `v`
+
+例如，发 `v1.0.2` 版，则 `version` = `1.0.2`，`tag` = `v1.0.2`
+```json
+{
+    "name": "@hsb/vue",
+    "version": "1.0.2"
+}
+```
+
+```bash
+$ git tag v1.0.2
+$ git push origin v1.0.2
+```
