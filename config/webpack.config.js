@@ -7,6 +7,7 @@ const copyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const helper = require('./helper');
 
@@ -22,7 +23,7 @@ const createHappyPlugin = (id, loaders) => {
 }
 
 module.exports = (options) => {
-  const { dev, env, mode, head, extra } = options;
+  const { dev, env, mode, head, extra, analyzer } = options;
   const sourceMapEnabled = dev;
   const relyOnLink = helper.createRelyOn('link', head.link || []);
   const relyOnScript = helper.createRelyOn('script', head.script || []);
@@ -203,6 +204,10 @@ module.exports = (options) => {
     config.plugins.push(new MiniCssExtractPlugin({
       filename: 'style.css'
     }));
+  }
+
+  if (analyzer) {
+    config.plugins.push(new BundleAnalyzerPlugin());
   }
 
   return config;

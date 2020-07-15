@@ -29,5 +29,6 @@ module.exports = {
       }
     };
     return config;
-  }
+  },
+  analyzer: false // 打包文件分析
 }
