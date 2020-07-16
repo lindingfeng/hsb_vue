@@ -160,6 +160,10 @@ module.exports = (options) => {
       ]
     },
 
+    resolve: {
+      extensions: ['.js', '.vue']
+    },
+
     plugins: [
       createHappyPlugin('happy-babel-js', ['babel-loader?cacheDirectory=true']),
       createHappyPlugin('happy-vue-js', ['babel-loader?cacheDirectory=true']),
@@ -168,7 +172,7 @@ module.exports = (options) => {
         patterns: [
           {
               from:path.join(process.cwd(), 'static'),// 打包的静态资源目录地址
-              to:'./' // 打包到dist下面的static
+              to:'./static' // 打包到dist下面的static
           },
         ]
       }),

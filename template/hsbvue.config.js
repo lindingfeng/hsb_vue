@@ -12,7 +12,7 @@ module.exports = {
     // 	{ src: '' }
     // ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: './static/favicon.ico' }
     ]
   },
   extra: {
@@ -26,6 +26,7 @@ module.exports = {
       ...config.resolve,
       alias: {
         '@': path.resolve(__dirname, 'src'),
+        'src': path.resolve(__dirname, 'src'),
       }
     };
     return config;
