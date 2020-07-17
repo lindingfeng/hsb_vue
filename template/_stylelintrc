@@ -1,6 +1,7 @@
 {
   "extends": "stylelint-config-recommended", 
   "plugins": ["stylelint-order"],
+  "ignoreFiles": ["**/iconfont.css"],
   "rules": {
     "at-rule-no-unknown": [
       true,

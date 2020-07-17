@@ -75,10 +75,12 @@ module.exports = {
     // 自定义webpack配置，修改config将会覆盖默认配置
     // dev 在开发模式时为 true
     // 例如修改devServer
-    config.devServer = {
-      ...config.devServer,
-      host: 'http://dev.huishoubao.com',
-      port: 8080
+    if (dev) {
+      config.devServer = {
+        ...config.devServer,
+        host: 'http://dev.huishoubao.com',
+        port: 8080
+      }
     }
     return config;
   }
