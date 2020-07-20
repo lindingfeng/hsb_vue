@@ -4,6 +4,7 @@
 
 * hsbvue
   * [使用说明](docs/USER.md)
+  * [旧项目迁移](docs/MIGRATE.md)
   * [cli开发指南](docs/DEVELOPER.md)（开发本脚手架）
 
 

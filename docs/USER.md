@@ -48,7 +48,10 @@ hsbvue dev -h http://dev.huishoubao.com -p 8080
 
 3. 打包生产环境代码
 ```bash
+# 打包product环境代码(process.env.ENV=product)
 hsbvue build
+# 打包其它环境代码
+hsbvue build --env=test # process.env.ENV=test
 ```
 
    
@@ -62,6 +65,14 @@ hsbvue upgrade -t v1.0.0 # 版本号既仓库tag
 ```
 
    
+
+5. 迁移旧项目
+
+```bash
+hsbvue migrate
+```
+
+
 
 ## 三、配置文件
 
