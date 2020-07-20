@@ -67,7 +67,6 @@ hsbvue upgrade -t v1.0.0 # 版本号既仓库tag
    
 
 5. 迁移旧项目
-
 ```bash
 hsbvue migrate
 ```
