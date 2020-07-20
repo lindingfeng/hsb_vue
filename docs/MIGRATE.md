@@ -38,3 +38,8 @@ npm run hsb:build:test # 打包测试环境代码
 
 
 
+## 三、常见问题
+
+1. 使用yarn时，迁移完成后提示缺失模块如何处理？
+
+   重新运行 `yarn` 或 `yarn install` 重新安装模块即可
