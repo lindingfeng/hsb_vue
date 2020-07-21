@@ -98,3 +98,9 @@ yarn cache clean
 
 
 
+5. 安装时提示node-sass安装失败
+可尝试设置sass源为淘宝源。
+```bash
+npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
+```
+
