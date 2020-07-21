@@ -6,6 +6,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const helper = require('./helper');
 
@@ -167,6 +168,7 @@ module.exports = (options) => {
     plugins: [
       createHappyPlugin('happy-babel-js', ['babel-loader?cacheDirectory=true']),
       createHappyPlugin('happy-vue-js', ['babel-loader?cacheDirectory=true']),
+      new CleanWebpackPlugin(),
       new VueLoaderPlugin(),
       new copyWebpackPlugin({
         patterns: [
