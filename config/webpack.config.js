@@ -169,8 +169,14 @@ module.exports = (options) => {
       new copyWebpackPlugin({
         patterns: [
           {
-              from:path.join(process.cwd(), 'static'),// 打包的静态资源目录地址
-              to:'./static' // 打包到dist下面的static
+              from:path.join(process.cwd(), 'public'),
+              to:'./',
+              noErrorOnMissing: true,
+          },
+          {
+              from:path.join(process.cwd(), 'static'),
+              to:'./static',
+              noErrorOnMissing: true,
           },
         ]
       }),
