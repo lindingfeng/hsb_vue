@@ -34,6 +34,7 @@
         "px2rem-loader": "^0.1.9",
         "sao": "^1.7.1",
         "sass-loader": "^9.0.2",
+        "simple-git": "^2.14.0",
         "style-loader": "^1.2.1",
         "stylelint": "^13.6.1",
         "stylelint-config-recommended": "^3.0.0",
