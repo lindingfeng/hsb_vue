@@ -132,6 +132,17 @@ npm run dev
 
 ## 五、版本发布
 
+1. 自动发版
+
+```bash
+npm run release
+```
+
+   
+
+
+2. 手动发版
+
 > 发布新版本时，必须打tag，并修改`package.json`的`version`字段
 >
 > tag和version必须一一对应
