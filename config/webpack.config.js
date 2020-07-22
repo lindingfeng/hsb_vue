@@ -128,10 +128,6 @@ module.exports = (options) => {
           use: cssLoaders.less,
         },
         {
-          test: /\.styl(us)?$/,
-          use: cssLoaders.stylus,
-        },
-        {
           test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
           use: [
             {

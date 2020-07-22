@@ -1,4 +1,5 @@
 const fs = require('fs')
+const sass = require("sass");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // 创建额外依赖{script, link}
@@ -88,8 +89,12 @@ exports.cssLoaders = (options = {}) => {
         css: generateLoaders(),
         postcss: generateLoaders(),
         less: generateLoaders('less'),
-        sass: generateLoaders('sass', { indentedSyntax: true }),
-        scss: generateLoaders('sass'),
-        stylus: generateLoaders('stylus'),
+        sass: generateLoaders('sass', {
+            indentedSyntax: true,
+            implementation: sass
+        }),
+        scss: generateLoaders('sass', {
+            implementation: sass
+        }),
     }
 }
