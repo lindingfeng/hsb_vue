@@ -10,6 +10,9 @@
         "url": "git+http://gitlab.huishoubao.com/web_team/public/hsb_vue.git",
         "type": "git"
     },
+    "scripts": {
+        "publish": "node lib/publish"
+    },
     "dependencies": {
         "@babel/core": "^7.10.4",
         "babel-eslint": "^10.1.0",
