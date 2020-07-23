@@ -23,7 +23,6 @@ module.exports = {
   webpack(config, { dev }) {
     // 自定义webpack配置
     config.resolve  = {
-      ...config.resolve,
       alias: {
         '@': path.resolve(__dirname, 'src'),
       }
@@ -32,7 +31,6 @@ module.exports = {
     if (dev) {
       // 开发环境专项配置
       config.devServer = {
-        ...config.devServer,
         proxy: {}
       }
     }

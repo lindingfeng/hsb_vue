@@ -1,13 +1,12 @@
 const path = require('path');
+const merge = require("webpack-merge");
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const webpackConfig = require('./webpack.config');
 
 module.exports = (options) => {
   const baseConfig = webpackConfig(options);
-  return {
-    ...baseConfig,
+  return merge(baseConfig, {
     plugins: [
-      ...baseConfig.plugins,
       new CaseSensitivePathsPlugin(),
     ],
     devServer: {
@@ -19,5 +18,5 @@ module.exports = (options) => {
       overlay: { warnings: false, errors: true },
       // quiet: false,
     }
-  }
+  });
 };

@@ -1,6 +1,8 @@
+const merge = require("webpack-merge");
 const webpackConfig = require('./webpack.config');
 
 module.exports = (options) => {
-  const config = webpackConfig(options);
-  return config;
+  const baseConfig = webpackConfig(options);
+  return merge(baseConfig, {
+  });
 };
