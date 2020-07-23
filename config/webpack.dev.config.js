@@ -1,5 +1,5 @@
 const path = require('path');
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const webpackConfig = require('./webpack.config');
 
