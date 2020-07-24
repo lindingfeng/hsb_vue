@@ -1,14 +1,24 @@
 # <%= name %>
 <%= description %>
 
-## 一、安装依赖
+## 一、环境依赖
+
+> `node` >= 10.16.0
+>
+> `npm` >= 6.9.0
+>
+> `git` >= 2.13.
+
+
+
+## 二、安装依赖
 ```bash
 npm i
 ```
 
 
 
-## 二、开发
+## 三、开发
 
 ```bash
 npm run dev
@@ -16,7 +26,7 @@ npm run dev
 
 
 
-## 三、编译打包
+## 四、编译打包
 
 ```bash
 npm run build
@@ -24,7 +34,7 @@ npm run build
 
 
 
-## 四、目录文件说明
+## 五、目录文件说明
 
 - 【require】必须文件/文件夹，不同页面模式下可能会没有
 - 【SPA】单页模式下才会有的文件/文件夹
@@ -60,13 +70,13 @@ npm run build
 
 
 
-### 4.1 单页应用（SPA）
+### 5.1 单页应用（SPA）
 
 在使用 `hsbvue` 创建项目时选择 “单页面（SPA）” 即会创建单页应用项目。此时，入口文件为`src/main.js`。
 
 
 
-### 4.2 多页面（UNIVERSAL）
+### 5.2 多页面（UNIVERSAL）
 
 在使用 `hsbvue` 创建项目时选择 “多页面” 即会创建多页面项目。此时，入口文件为`src/entry/[name]/main.js`。
 
@@ -95,7 +105,7 @@ npm run build
 
 
 
-## 五、插件机制
+## 六、插件机制
 
 约定在 `src/plugins` 目录处理第三方包。如用`hsbvue`创建项目时选择了第三方ui框架，也将会自动创建该目录，如：
 
@@ -112,7 +122,7 @@ import '@/plugins/element-ui';
 
 
 
-## 六、多环境
+## 七、多环境
 
 目前支持三种环境：`local`、`test`、`product`，分别对应不同指令：
 
@@ -144,7 +154,7 @@ console.log(env); // other
 
 
 
-## 七、发版
+## 八、发版
 
 发版系统使用劲劲开发的 [hsb-release](https://www.npmjs.com/package/hsb-release) ，初次使用需要自行配置 `release.config.json` 文件。
 
@@ -156,7 +166,7 @@ npm run release
 
 
 
-## 八、注意事项
+## 九、注意事项
 
 - utils大部分继承自 `@hsb/vue/utils` ，建议通用性较强的扩展可提交到 `@hsb/vue` 仓库
 - `hsbvue.config.js`中的`mode`将决定webpack以何种方式打包，建议不要随意修改

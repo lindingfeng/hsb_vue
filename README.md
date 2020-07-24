@@ -9,7 +9,17 @@
 
 
 
-## 二、安装方式
+## 二、环境依赖
+
+> `node` >= 10.16.0
+>
+> `npm` >= 6.9.0
+>
+> `git` >= 2.13.2
+
+
+
+## 三、安装方式
 
 1. 全局cli（推荐）
 ```bash
@@ -32,7 +42,7 @@ cd my-app
 
 
 
-## 三、开始开发
+## 四、开始开发
 
 ```bash
 npm run dev # 启动开发模式
@@ -41,7 +51,7 @@ npm run build # 编译
 
 
 
-## 四、更新/升级
+## 五、更新/升级
 
 如要更新/升级到最新版本的脚手架，也可通过全局cli命令和npx两种方式
 
@@ -63,7 +73,7 @@ npx git+http://gitlab.huishoubao.com/web_team/public/hsb_vue.git upgrade
 
 
 
-## 五、常见问题
+## 六、常见问题
 
 1. 如何获得相关指令帮助？
 
@@ -102,10 +112,7 @@ yarn cache clean
 
 
 
-5. 安装时提示node-sass安装失败？
+5. 安装时报没有权限（Access denied）？报仓库不存在（The project you were looking for could not be found）？
 
-可尝试设置sass源为淘宝源。
-```bash
-npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
-```
+此为http认证失败，可尝试临时移除git仓库的SSH Key（为了触发再次认证），然后git clone任意http://gitlab.huishoubao.com上的仓库，按提示输入账号密码即可完成认证。
 
