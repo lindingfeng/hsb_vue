@@ -114,5 +114,5 @@ yarn cache clean
 
 5. 安装时报没有权限（Access denied）？报仓库不存在（The project you were looking for could not be found）？
 
-此为http认证失败，可尝试临时移除git仓库的SSH Key（为了触发再次认证），然后git clone任意http://gitlab.huishoubao.com上的仓库，按提示输入账号密码即可完成认证。
+此为http认证失败，可尝试临时移除git仓库的SSH Key（为了触发再次认证），然后git clone任意 http://gitlab.huishoubao.com 上的仓库，按提示输入账号密码即可完成认证。
 
