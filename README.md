@@ -114,5 +114,15 @@ yarn cache clean
 
 5. 安装时报没有权限（Access denied）？报仓库不存在（The project you were looking for could not be found）？
 
-此为http认证失败，可尝试临时移除git仓库的SSH Key（为了触发再次认证），然后git clone任意 http://gitlab.huishoubao.com 上的仓库，按提示输入账号密码即可完成认证。
+可尝试带账号安装(Basic Auth)。具体为修改http地址为 `http://[账号]@url` ，以账号`bruce`为例：
+
+```bash
+# 安装cli
+npm i -g git+http://bruce@gitlab.huishoubao.com/web_team/public/hsb_vue.git --registry=https://registry.npm.taobao.org
+# npx使用
+npx git+http://bruce@gitlab.huishoubao.com/web_team/public/hsb_vue.git create my-app
+```
+
+
+
 
