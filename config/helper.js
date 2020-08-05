@@ -47,10 +47,6 @@ exports.cssLoaders = (options = {}) => {
 
     const postcssLoader = {
         loader: 'postcss-loader',
-        options: {
-            sourceMap: options.sourceMap,
-            modules: true
-        }
     }
 
     const px2remLoader = {
