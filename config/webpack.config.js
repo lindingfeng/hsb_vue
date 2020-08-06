@@ -132,8 +132,9 @@ module.exports = (options) => {
           use: [
             {
               loader: "file-loader",
-              query: {
-                name: "img/[name].[hash].[ext]"
+              options: {
+                name: "img/[name].[hash].[ext]",
+                esModule: false,
               },
             },
           ]
