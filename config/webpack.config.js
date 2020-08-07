@@ -80,7 +80,8 @@ module.exports = (options) => {
     entry: entryAndHtml.entry,
     output: {
       path: path.join(process.cwd(), 'dist'),
-      filename: dev ? 'js/[name].js' : 'js/[name].[chunkhash].js'
+      filename: dev ? 'js/[name].js' : 'js/[name].[chunkhash].js',
+      publicPath: '/'
     },
 
     module: {
