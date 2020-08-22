@@ -90,9 +90,17 @@ module.exports = (options) => {
         {
           enforce: 'pre',
           test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /node_modules/,
-          options: { fix: true }
+          use: [
+            'cache-loader',
+            {
+              loader: 'eslint-loader',
+              options: {
+                exclude: /node_modules/,
+                fix: true,
+              }
+            }
+          ],
+          include: path.resolve('src'),
         },
         {
           test: /\.vue$/,
@@ -110,7 +118,8 @@ module.exports = (options) => {
         },
         {
           test: /\.js$/,
-          loader: dev ? "babel-loader" : 'happypack/loader?id=happy-vue-js'
+          // loader: dev ? "babel-loader?cacheDirectory" : 'happypack/loader?id=js'
+          use: ['cache-loader', 'happypack/loader?id=js']
         },
         {
           test: /\.css$/,
@@ -118,15 +127,15 @@ module.exports = (options) => {
         },
         {
           test: /\.scss$/,
-          use: cssLoaders.scss,
+          use: ['cache-loader', ...cssLoaders.scss],
         },
         {
           test: /\.sass$/,
-          use: cssLoaders.sass,
+          use: ['cache-loader', ...cssLoaders.sass],
         },
         {
           test: /\.less$/,
-          use: cssLoaders.less,
+          use: ['cache-loader', ...cssLoaders.less],
         },
         {
           test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -164,8 +173,7 @@ module.exports = (options) => {
     },
 
     plugins: [
-      createHappyPlugin('happy-babel-js', ['babel-loader?cacheDirectory=true']),
-      createHappyPlugin('happy-vue-js', ['babel-loader?cacheDirectory=true']),
+      createHappyPlugin('js', ['babel-loader?cacheDirectory=true']),
       new CleanWebpackPlugin(),
       new VueLoaderPlugin(),
       new copyWebpackPlugin({
