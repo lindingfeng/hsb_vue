@@ -85,11 +85,11 @@ exports.cssLoaders = (options = {}) => {
         css: generateLoaders(),
         postcss: generateLoaders(),
         less: generateLoaders('less'),
-        sass: generateLoaders('fast-sass', {
+        sass: generateLoaders('sass', {
             indentedSyntax: true,
             implementation: sass
         }),
-        scss: generateLoaders('fast-sass', {
+        scss: generateLoaders('sass', {
             implementation: sass
         }),
     }

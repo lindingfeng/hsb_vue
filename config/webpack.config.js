@@ -6,7 +6,6 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const copyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const helper = require('./helper');
 
@@ -174,7 +173,6 @@ module.exports = (options) => {
 
     plugins: [
       createHappyPlugin('js', ['babel-loader?cacheDirectory=true']),
-      new CleanWebpackPlugin(),
       new VueLoaderPlugin(),
       new copyWebpackPlugin({
         patterns: [
@@ -205,10 +203,15 @@ module.exports = (options) => {
         chunks: "all",
         name: true,
         cacheGroups: {
+          dll: {
+            name: 'dll',
+            test: /[\\/]node_modules[\\/](vue|vue-router|vuex)[\\/]/,
+            priority: 20
+          },
           vendors: {
             name: 'vendors',
             test: /[\\/]node_modules[\\/]/,
-            minChunks: 1,
+            minChunks: 2, // 引用两次及以上的依赖才会被抽离
             priority: 10
           },
         }
