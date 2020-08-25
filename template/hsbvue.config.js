@@ -12,7 +12,7 @@ module.exports = {
     // 	{ src: '' }
     // ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: './static/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   extra: {
