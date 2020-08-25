@@ -99,7 +99,7 @@ module.exports = (options) => {
               }
             }
           ],
-          include: path.resolve('src'),
+          include: path.resolve(process.cwd(), 'src'),
         },
         {
           test: /\.vue$/,
@@ -113,16 +113,18 @@ module.exports = (options) => {
               img: 'src',
               image: 'xlink:href'
             }
-          }
+          },
         },
         {
           test: /\.js$/,
           // loader: dev ? "babel-loader?cacheDirectory" : 'happypack/loader?id=js'
-          use: ['cache-loader', 'happypack/loader?id=js']
+          use: ['cache-loader', 'happypack/loader?id=js'],
+          exclude: /dist|static/
         },
         {
           test: /\.css$/,
           use: cssLoaders.css,
+          exclude: /dist|static/
         },
         {
           test: /\.scss$/,

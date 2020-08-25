@@ -14,9 +14,14 @@ module.exports = (options) => {
       hot: true,
       port: 3000,
       host: '127.0.0.1',
+      disableHostCheck: true,
       historyApiFallback: true,
       overlay: { warnings: false, errors: true },
-      // quiet: false,
+      stats: 'minimal',
+      watchOptions: {
+        ignored: /node_modules|static/,
+        aggregateTimeout: 300,
+      },
     }
   });
 };
