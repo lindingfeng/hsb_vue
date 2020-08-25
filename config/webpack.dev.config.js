@@ -17,7 +17,14 @@ module.exports = (options) => {
       disableHostCheck: true,
       historyApiFallback: true,
       overlay: { warnings: false, errors: true },
-      stats: 'minimal',
+      stats: {
+        colors: true,
+        hash: false,
+        modules: false,
+        assets: false,
+        version: false,
+        entrypoints: false,
+      },
       watchOptions: {
         ignored: /node_modules|static/,
         aggregateTimeout: 300,
