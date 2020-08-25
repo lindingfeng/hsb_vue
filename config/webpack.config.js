@@ -224,7 +224,8 @@ module.exports = (options) => {
   if (extra.useExtractCSS && !dev) {
     const MiniCssExtractPlugin = require('mini-css-extract-plugin');
     config.plugins.push(new MiniCssExtractPlugin({
-      filename: 'style.css'
+      filename: dev ? 'css/[name].css' : 'css/[name].[hash].css',
+      chunkFilename: dev ? 'css/[id].css' : 'css/[id].[hash].css',
     }));
   }
 
