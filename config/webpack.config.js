@@ -119,12 +119,12 @@ module.exports = (options) => {
           test: /\.js$/,
           // loader: dev ? "babel-loader?cacheDirectory" : 'happypack/loader?id=js'
           use: ['cache-loader', 'happypack/loader?id=js'],
-          exclude: /dist|static/
+          exclude: /static/
         },
         {
           test: /\.css$/,
           use: cssLoaders.css,
-          exclude: /dist|static/
+          exclude: /static/
         },
         {
           test: /\.scss$/,
