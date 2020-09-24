@@ -21,7 +21,8 @@ const createHappyPlugin = (id, loaders) => {
 }
 
 module.exports = (options) => {
-  const { dev, env, mode, head, extra, analyzer } = options;
+  const { dev, env, mode, head, extra, analyzer, workspace } = options;
+  const base = workspace ? `packages/${workspace}/` : '';
   const sourceMapEnabled = dev;
   const relyOnLink = helper.createRelyOn('link', head.link || []);
   const relyOnScript = helper.createRelyOn('script', head.script || []);
@@ -35,11 +36,11 @@ module.exports = (options) => {
 
   const getEntryAndHtml = (mode) => {
     if (mode === 'universal') {
-      const names = helper.getFolderName(path.join(process.cwd(), 'src/entry'))
+      const names = helper.getFolderName(path.join(process.cwd(), `${base}src/entry`))
       const entry = {}
       const htmlPlugin = []
       names.forEach(name => {
-        entry[name] = `./src/entry/${name}/main.js`
+        entry[name] = `./${base}src/entry/${name}/main.js`
         htmlPlugin.push(new HtmlWebpackPlugin({
           template: path.join(process.cwd(), `index.html`),
           filename: `${name}.html`,
@@ -58,7 +59,7 @@ module.exports = (options) => {
       }
     } else {
       return {
-        entry: './src/main.js',
+        entry: `./${base}src/main.js`,
         htmlPlugin: [new HtmlWebpackPlugin({
           template: path.join(process.cwd(), 'index.html'),
           meta: head.meta,
