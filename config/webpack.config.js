@@ -100,7 +100,7 @@ module.exports = (options) => {
               }
             }
           ],
-          include: path.resolve(process.cwd(), 'src'),
+          include: [path.resolve(process.cwd(), 'src'), path.resolve(process.cwd(), 'packages')],
         },
         {
           test: /\.vue$/,
